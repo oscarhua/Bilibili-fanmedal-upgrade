@@ -11,8 +11,15 @@ int main() {
     std::string recvdata;
 
     // fill in the cookie here
-    const std::string bilicookie = "";
-    const std::string apicookie = "";
+    std::string bilicookie = "";
+    std::string apicookie = "";
+
+    // Support github action
+    char *env_bili = getenv("ACTION_BILI");
+    if (env_bili != NULL) {
+        bilicookie = env_bili;
+        apicookie = getenv("ACTION_API");
+    }
 
     Bilibili bili(bilicookie);
     BiliApi biliapi(apicookie);

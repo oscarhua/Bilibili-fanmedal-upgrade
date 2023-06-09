@@ -184,6 +184,7 @@ void BiliApi::getExp(const uint32_t roomid) {
     likeRoom(roomid);
     std::cout << "Room id = " << roomid << " bullet chat and like sent" << std::endl;
     bool live = false;
+    return;
     while (true) {
         uint32_t status = roomPlayInfo(roomid);
         if (live) {

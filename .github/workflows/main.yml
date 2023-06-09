@@ -1,0 +1,22 @@
+name: Daily check in
+run-name: Daily check in
+on:
+  schedule:
+    - cron: '15 6 * * *'
+jobs:
+  Check-in:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Install openssl
+        run: sudo apt-get install -y make libssl-dev
+      
+      - name: Build
+        run: make
+      
+      - name: Run the program
+        env:
+          ACTION_BILI: ${{ secrets.ACTION_BILI }}
+          ACTION_API: ${{ secrets.ACTION_API }}
+        run: ./bili
