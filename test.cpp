@@ -29,6 +29,9 @@ int main() {
 
     std::vector<uint32_t> room_id;
     biliapi.fansMedal(room_id);
+    if (!room_id.size()) {
+        return 0;
+    }
     for (size_t i = 0; i < room_id.size() - 1; ++i) {
         std::thread(
             [&biliapi] (uint32_t roomid) -> void {

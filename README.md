@@ -1,4 +1,4 @@
-# Bilibili fan medal upgrade (still under construction)
+# Bilibili fan medal upgrade
 
 ## Functionality:
 - Get the room ID of all anchors that the user has fan medals of
